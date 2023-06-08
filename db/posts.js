@@ -4,9 +4,10 @@ const genPost = () => ({
   id: faker.string.nanoid(),
   createdAt: faker.date.recent(),
   author: {
-    id: faker.string.nanoid(),
-    name: faker.person.fullName(),
-    avatar: faker.image.avatar()
+    publicId: faker.string.nanoid(),
+    displayedName: faker.person.fullName(),
+    avatar: faker.image.avatar(),
+    about: faker.datatype.boolean() ? null : faker.lorem.sentence(8),
   },
   title: faker.lorem.sentence({ max: 8, min: 1 }),
   shortDesc: faker.lorem.sentence(25),
